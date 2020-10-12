@@ -1,3 +1,5 @@
+# PHY293 Labs
+# Aoran Jiao and Hshmat Sahak
 import math
 import matplotlib.pyplot as plt
 
