@@ -2,6 +2,7 @@
 # Aoran Jiao and Hshmat Sahak
 import math
 import matplotlib.pyplot as plt
+import numpy as np
 
 data = [[0.088, 6.19], [0.279, 6.18], [0.733, 6.18], [3.28, 6.18]] # x, y data sets
 
@@ -10,9 +11,7 @@ data = [[0.088, 6.19], [0.279, 6.18], [0.733, 6.18], [3.28, 6.18]] # x, y data s
 xl = [0.088, 0.279, 0.733, 3.28]
 yl = [6.19, 6.18, 6.18, 6.18]
 '''
-
 # option 2
-
 xl = [0.089, 0.279, 0.733, 3.27]
 yl = [6.18, 6.15, 6.11, 5.86]
 
@@ -56,13 +55,18 @@ residual = [yl[i] - y_predicted[i] for i in range(N)]
 
 print('Residual = ', residual)
 
+# plot the y = 0 line
+x0 = np.linspace(0,4,100)
+y0 = 0*x0
+plt.plot(x0, y0, linestyle = '--')
+
 plt.scatter(xl, residual, label="stars", color="green",
             marker="1", s=30)
 
-plt.xlabel('I')
-plt.ylabel('Residual V')
+plt.xlabel('I2 [mA]')
+plt.ylabel('Residual of V2 [V]')
 
-plt.title('Residual Graph of V vs I')
+plt.title('Residual Graph of V2 vs I2')
 
 # plt.show()
 plt.savefig('graph2.png')
